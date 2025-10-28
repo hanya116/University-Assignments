@@ -16,7 +16,7 @@ public class CalendarProgram {
         int daysInMonth = firstDay.lengthOfMonth();
 
         DayOfWeek startDay = firstDay.getDayOfWeek();
-        int startIndex = startDay.getValue(); // 1 = Monday, 7 = Sunday
+        int startIndex = startDay.getValue(); 
 
         if (startIndex == 7)
             startIndex = 0;
@@ -46,3 +46,4 @@ public class CalendarProgram {
         input.close();
     }
 }
+
