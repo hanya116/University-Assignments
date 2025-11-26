@@ -10,7 +10,7 @@ public class CharInput {
         }
     }
     public static void main(String[] args) {
-        InputHelper input = new Input();
+        Input input = new Input();
         System.out.println("This program will ask you for 10 characters.");
         for (int i = 1; i <= 10; i++) {
             System.out.print("Enter character " + i + ": ");
