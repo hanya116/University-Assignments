@@ -1,49 +1,46 @@
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Scanner;
-
-public class CalendarProgram {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Enter year: ");
-        int year = input.nextInt();
-
-        System.out.print("Enter month (1-12): ");
-        int month = input.nextInt();
-
-        LocalDate firstDay = LocalDate.of(year, month, 1);
-        int daysInMonth = firstDay.lengthOfMonth();
-
-        DayOfWeek startDay = firstDay.getDayOfWeek();
-        int startIndex = startDay.getValue(); 
-
-        if (startIndex == 7)
-            startIndex = 0;
-
-        System.out.println("Calendar for the month of " + firstDay.getMonth() + ", " + year);
-        System.out.println("Su  Mo  Tu  We  Th  Fr  Sa");
-
-        int day = 1; 
-        int counter = 0;
-
-        while (counter < 42) {
-           if (counter < startIndex) {
-                System.out.print("    ");
-            } else if (day <= daysInMonth) {
-                   System.out.printf("%-4d", day);
-                day++;
-            } else {
-                           System.out.print("    ");
-            }
-
-            counter++;
-
-           if (counter % 7 == 0)
-                System.out.println();
+class CalendarProgram{
+    public static void main(String[] args){
+        System.out.print("Enter the month number (1-12):");
+        Scanner sc = new Scanner(System.in);
+        int month = sc.nextInt();
+        
+        if (month > 12){
+            System.out.print("Enter correct month!");
+            month = sc.nextInt();
+            
         }
 
-        input.close();
+        System.out.print("Enter the year:");
+        int year = sc.nextInt();
+
+        LocalDate firstDate = LocalDate.of(year, month, 1);
+
+        System.out.println("Su  Mo  Tu  We  Th  Fr  Sa");
+        String firstTimeSpace;
+
+        if (firstDate.getDayOfWeek().toString().equals("SUNDAY")) {
+            firstTimeSpace = " ";
+        }else {
+            firstTimeSpace = " ".repeat((firstDate.getDayOfWeek().getValue() * 4));
+        }
+        System.out.print(firstTimeSpace + " 1  ");
+
+        for (int i = 2; i <= firstDate.lengthOfMonth(); i++) {
+            LocalDate date =  firstDate.plusDays(i-1);
+
+            if (date.getDayOfWeek().toString().equals("SUNDAY")) {
+                System.out.println();
+            }
+            if (i >1 && i < 10) {
+                System.out.print(" " + i + "  ");
+                }
+                else {
+                System.out.print(i + "  ");
+            }
+        }
+        sc.close(); 
     }
 }
-
