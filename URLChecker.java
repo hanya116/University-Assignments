@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class URLCheckerSimple {
+public class URLChecker {
     public static boolean isValidURL(String url) {
         // Remove spaces
         url = url.trim();
