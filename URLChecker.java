@@ -20,5 +20,6 @@ public class URLChecker {
         } else {
             System.out.println("INVALID URL");
         }
+         sc.close();
     }
 }
