@@ -1,17 +1,15 @@
 import java.util.Scanner;
 public class URLChecker {
     public static boolean isValidURL(String url) {
-        // Remove spaces
-        url = url.trim();
+         url = url.trim();// Remove spaces
         // URL must start with http:// or https:// or www.
         if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("www.")) {
-         // URL must have at least 1 dot
-            if (url.contains(".")) {
+        
+            if (url.contains(".")) {  // URL must have at least 1 dot
                 return true;
             }
         }
-        // If above conditions fail → invalid
-        return false;
+               return false;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
