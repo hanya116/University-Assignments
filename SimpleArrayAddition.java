@@ -1,5 +1,5 @@
 import java.util.Arrays;
-public class SimplefunctionArray{
+public class SimpleArrayAddition{
     public static void main(String[] args){
         int array[]={1,2,3,4,5};
         int res = 0;
