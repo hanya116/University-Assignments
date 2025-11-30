@@ -1,3 +1,4 @@
+//recursion for factorial
 public class recursionF{
     public static void main(String[] args){
         System.out.println(factorial(5));
